@@ -6,7 +6,7 @@ $(function() {
 
     $.ajax({
       type:'POST',
-      url: 'signup.php',
+      url: 'php/signup.php',
       data: dataString,
       success: function() {
         $('#signupform').html('<div id="message"></div>');

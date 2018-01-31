@@ -12,7 +12,7 @@ var h2El = document.createElement('h3');
 
 // ****************************** Event handlers ******************************
 
-// When user enters field: change bg color and empty initial value
+// When user enters field: change bg color, empty initial value
 function handleFocus(event) {
   event.preventDefault();
   event.target.style.backgroundColor = '#17ad96';
@@ -24,7 +24,7 @@ function handleFocus(event) {
   }
 }
 
-// When user leaves field: return original bg color and replace initial value if empty
+// When user leaves field: return original bg color, replace initial value if empty
 function handleBlur(event) {
   event.preventDefault();
   event.target.style.backgroundColor = '#fff';
