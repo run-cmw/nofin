@@ -1,0 +1,89 @@
+* {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+body {
+  background-image: url('../images/background/wave-beach-pale.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  color: rgb(221, 221, 221);
+}
+
+nav img {
+  width: 10%;
+  height: auto;
+  margin-bottom: 10%;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+nav ul {
+  float: right;
+  padding-top: 20px;
+  padding-right: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+nav a:hover {
+  color: rgb(23, 173, 150);
+}
+
+p {
+  width: 50%;
+  margin: 0px auto;
+  border-radius: 5px;
+  padding: 20px 20px 0px 20px;
+  background-color: rgba(126, 159, 178, 0.5);
+  text-align: center;
+}
+
+form {
+  width: 50%;
+  margin: 0px auto;
+  border-radius: 5px;
+  padding: 30px 20px 40px 20px;
+  background-color: rgba(126, 159, 178, 0.5);
+  text-align: center;
+}
+
+input {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button {
+  margin-top: 15px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(23, 173, 150);
+  color: rgb(221, 251, 221);
+  font-weight: bold;
+}
+
+button:hover, button:active {
+  background-color: rgb(0, 60, 69);
+}
+
+h1, h2 {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 1em;
+  color: rgb(210, 192, 156);
+}
