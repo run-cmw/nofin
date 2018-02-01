@@ -8,7 +8,7 @@
     $subject = 'New Nofin subscriber!';
     $message = 'Name: ' . $firstname . ' ' . $lastname . "\n";
     $message .= 'Email address: ' . $emailaddress;
-    $success = mail($to, $subject, $message);
+    mail($to, $subject, $message);
 
     echo $message;
 
