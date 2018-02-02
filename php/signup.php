@@ -10,7 +10,7 @@
     $message .= 'Email address: ' . $emailaddress;
     mail($to, $subject, $message);
 
-    echo $message;
+    console.log($message);
 
     // send form data to text file
     $file = fopen("subscribers.txt", "r+");
