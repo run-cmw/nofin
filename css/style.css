@@ -83,7 +83,7 @@ button:hover, button:active {
 
 h1, h2 {
   margin-top: 5px;
-  font-weight: bold;
   font-size: 1em;
+  font-weight: bold;
   color: rgb(210, 192, 156);
 }

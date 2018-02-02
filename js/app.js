@@ -6,9 +6,9 @@ var errorMessages = ['Please enter your first name. ', 'Please enter your last n
 
 var formEl = document.getElementsByTagName('form');
 var input = document.getElementsByTagName('input');
-var submit = document.getElementById('submit');
-var h1El = document.createElement('h2');
-var h2El = document.createElement('h3');
+var subscribe = document.getElementById('subscribe');
+var h1El = document.createElement('h1');
+var h2El = document.createElement('h2');
 
 // ****************************** Event handlers ******************************
 
@@ -37,7 +37,7 @@ function handleBlur(event) {
 }
 
 // When user clicks sign up: store input, input validation
-function handleSubmit(event) {
+function handleSubscribe(event) {
   event.preventDefault();
   h1El.textContent = '';
   h2El.textContent = '';
@@ -62,24 +62,24 @@ function handleSubmit(event) {
 }
 
 if (h1El.textContent === '' && h2El.textContent === '') {
-  // $(function() {
-  $('#submit').click(function() {
-    var dataString = 'name = ' + firstname + ' ' + lastname + ', email address = ' + emailaddress;
+  $(function() {
+    $('#signupform').click(function(event) { //works with button or form click but not submit
+      var dataString = 'name = ' + firstname + ' ' + lastname + ', email address = ' + emailaddress;
 
-    $.ajax({
-      type:'POST',
-      url: 'php/signup.php',
-      data: dataString,
-      success: function() {
-        $('#signupform').html('<div id="message"></div>');
-        $('#message').html('<p>Thank you. You are subscribed.</p>');
+      $.ajax({
+        type:'POST',
+        url: 'php/signup.php',
+        data: dataString,
+        success: function() {
+          $('#formdiv').html('<div id="message"></div>');
+          $('#message').html('<p>Thank you. You are subscribed.</p>');
 
-        alert (dataString);
-      }
+          console.log(dataString);
+        }
+      });
+      event.preventDefault();
     });
-    return false;
   });
-  // });
 }
 
 // ****************************** Event listeners ******************************
@@ -95,4 +95,4 @@ for (var j = 0; j < input.length; j++) {
 }
 
 // Click on sign up button
-submit.addEventListener('click', handleSubmit);
+subscribe.addEventListener('click', handleSubscribe);
