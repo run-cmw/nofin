@@ -73,7 +73,6 @@ function handleSubscribe(event) {
       success: function() {
         $('#formdiv').html('<div id="message"</div>');
         $('#message').html('<p>Thank you. You are subscribed.</p>');
-        console.log($form.serializeArray());
       }
     });
   }
