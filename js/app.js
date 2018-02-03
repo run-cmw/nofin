@@ -59,28 +59,46 @@ function handleSubscribe(event) {
     h2El.textContent = errorMessages[3];
     formEl[0].appendChild(h2El);
   }
-}
 
-if (h1El.textContent === '' && h2El.textContent === '') {
-  $(function() {
-    $('#signupform').click(function(event) { //works with button or form click but not submit
-      var dataString = 'name = ' + firstname + ' ' + lastname + ', email address = ' + emailaddress;
+  if (h1El.textContent === '' && h2El.textContent === '') { // if initial email value has changed and there are no error messages
 
+    var $form = $('#signupform');
+    var url = '"https://formspree.io/cmwells@dons.usfca.edu';
+
+    $('#subscribe').on('click', function(event) {
+      event.preventDefault();
       $.ajax({
-        type:'POST',
-        url: 'php/signup.php',
-        data: dataString,
+        url: url,
+        method: 'GET',
+        dataType: 'json',
+        data: $form.serializeArray(),
         success: function() {
-          $('#formdiv').html('<div id="message"></div>');
+          $('#formdiv').html('<div id="message"</div>');
           $('#message').html('<p>Thank you. You are subscribed.</p>');
-
-          console.log(dataString);
         }
       });
-      event.preventDefault();
     });
-  });
+  //   $(function() {
+  //     $('#signupform').click(function(event) { //works with button or form click but not submit
+  //       var dataString = 'name = ' + firstname + ' ' + lastname + ', email address = ' + emailaddress;
+  //
+  //       $.ajax({
+  //         type:'POST',
+  //         url: 'php/signup.php',
+  //         data: dataString,
+  //         success: function() {
+  //           $('#formdiv').html('<div id="message"></div>');
+  //           $('#message').html('<p>Thank you. You are subscribed.</p>');
+  //
+  //           console.log(dataString);
+  //         }
+  //       });
+  //       event.preventDefault();
+  //     });
+  //   });
+  }
 }
+
 
 // ****************************** Event listeners ******************************
 
