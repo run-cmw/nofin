@@ -36,7 +36,7 @@ function handleBlur(event) {
   }
 }
 
-// When user clicks sign up: store input, input validation
+// When user clicks sign up: store input, input validation, ajax confirmation message
 function handleSubscribe(event) {
   event.preventDefault();
   h1El.textContent = '';
@@ -60,7 +60,7 @@ function handleSubscribe(event) {
     formEl[0].appendChild(h2El);
   }
 
-  if (h1El.textContent === '' && h2El.textContent === '') { // if initial email value has changed and there are no error messages -- input[2].value !== initialInputValues[2] &&
+  if (h1El.textContent === '' && h2El.textContent === '') { // if there are no error messages
 
     var $form = $('#signupform');
     var url = 'https://script.google.com/a/dons.usfca.edu/macros/s/AKfycbwF2lg_qKTrziSFtL-GuLM7KYk9QMVZdyPCq9NrXSEfImObDfzi/exec';
@@ -73,27 +73,9 @@ function handleSubscribe(event) {
       success: function() {
         $('#formdiv').html('<div id="message"</div>');
         $('#message').html('<p>Thank you. You are subscribed.</p>');
+        console.log($form.serializeArray());
       }
     });
-
-  //   $(function() {
-  //     $('#subscribe').click(function(event) { //works with button or form click but not submit
-  //       var dataString = 'name = ' + firstname + ' ' + lastname + ', email address = ' + emailaddress;
-  //
-  //       $.ajax({
-  //         type:'POST',
-  //         url: 'php/signup.php',
-  //         data: dataString,
-  //         success: function() {
-  //           $('#formdiv').html('<div id="message"></div>');
-  //           $('#message').html('<p>Thank you. You are subscribed.</p>');
-  //
-  //           console.log(dataString);
-  //         }
-  //       });
-  //       event.preventDefault();
-  //     });
-  //   });
   }
 }
 
