@@ -60,26 +60,24 @@ function handleSubscribe(event) {
     formEl[0].appendChild(h2El);
   }
 
-  if (h1El.textContent === '' && h2El.textContent === '') { // if initial email value has changed and there are no error messages
+  if (h1El.textContent === '' && h2El.textContent === '') { // if initial email value has changed and there are no error messages -- input[2].value !== initialInputValues[2] &&
 
     var $form = $('#signupform');
-    var url = '"https://formspree.io/cmwells@dons.usfca.edu';
+    var url = 'https://script.google.com/a/dons.usfca.edu/macros/s/AKfycbwF2lg_qKTrziSFtL-GuLM7KYk9QMVZdyPCq9NrXSEfImObDfzi/exec';
 
-    $('#subscribe').on('click', function(event) {
-      event.preventDefault();
-      $.ajax({
-        url: url,
-        method: 'GET',
-        dataType: 'json',
-        data: $form.serializeArray(),
-        success: function() {
-          $('#formdiv').html('<div id="message"</div>');
-          $('#message').html('<p>Thank you. You are subscribed.</p>');
-        }
-      });
+    $.ajax({
+      url: url,
+      method: 'GET',
+      dataType: 'json',
+      data: $form.serializeArray(),
+      success: function() {
+        $('#formdiv').html('<div id="message"</div>');
+        $('#message').html('<p>Thank you. You are subscribed.</p>');
+      }
     });
+
   //   $(function() {
-  //     $('#signupform').click(function(event) { //works with button or form click but not submit
+  //     $('#subscribe').click(function(event) { //works with button or form click but not submit
   //       var dataString = 'name = ' + firstname + ' ' + lastname + ', email address = ' + emailaddress;
   //
   //       $.ajax({
