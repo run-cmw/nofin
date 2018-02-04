@@ -6,7 +6,9 @@
 
 body {
   background-image: url('../images/background/wave-beach-pale.jpeg');
+  background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   font-size: 1.2em;
   letter-spacing: 1px;
@@ -15,11 +17,13 @@ body {
 }
 
 nav img {
-  width: 10%;
+  /*width: 10%;*/
+  width: 100px;
+  max-width: 100%;
   height: auto;
   margin-bottom: 10%;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 nav ul {
@@ -85,5 +89,5 @@ h1, h2 {
   margin-top: 5px;
   font-size: 1em;
   font-weight: bold;
-  color: rgb(210, 192, 156);
+  color: rgb(221, 251, 221);
 }
